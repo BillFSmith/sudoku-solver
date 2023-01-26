@@ -15,22 +15,8 @@ example_grid = StringIO("\
  0 4 0 0 0 0 6 0 0 \n\
  0 0 3 0 9 5 0 4 0 \
 ")
-
-
-example_solution = StringIO("\
- 9 1 7 5 2 6 3 8 4 \n\
- 3 5 4 8 1 7 2 9 6 \n\
- 6 2 8 4 3 9 5 7 1 \n\
- 2 7 6 9 5 1 4 3 8 \n\
- 1 3 5 2 4 8 9 6 7 \n\
- 4 8 9 6 7 3 1 2 5 \n\
- 5 9 2 7 6 4 8 1 3 \n\
- 7 4 1 3 8 2 6 5 9 \n\
- 8 6 3 1 9 5 7 4 2 \
-")     
     
 example_grid = np.loadtxt(example_grid).astype(int)
-example_solution = np.loadtxt(example_solution).astype(int)
 
 def legal_board(grid):
     board_legality = True
@@ -145,7 +131,7 @@ def depth_first_search(temp_grid, temp_possible_values, temp_coordinates, temp_v
                 glob_fin = 1
                 print('solved!')
                 print(grid)
-                print(provided_solution)
+                print(glob_sol)
                 return
             else:
                 return
@@ -180,10 +166,10 @@ difficulty = 'easy'
 difficulty = 'medium'
 difficulty = 'hard'
 
-sudoku = np.load("data/" + difficulty + "_puzzle.npy")
+# sudoku = np.load("data/" + difficulty + "_puzzle.npy")
 # print(difficulty + "_puzzle.npy has been loaded into the variable sudoku")
 
-solutions = np.load("data/" + difficulty + "_solution.npy")
+# solutions = np.load("data/" + difficulty + "_solution.npy")
 # print()
 
 correct = []
@@ -200,7 +186,7 @@ start_time = time.process_time()
 # provided_solution = solutions[puzzle_num,:,:]
 
 grid = np.copy(example_grid)
-provided_solution = np.copy(example_solution)
+# provided_solution = np.copy(example_solution)
 
 glob_sol = np.full((9,9), -1, dtype=int)
 glob_fin = 0
