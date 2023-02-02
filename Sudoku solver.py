@@ -166,17 +166,9 @@ difficulty = 'easy'
 difficulty = 'medium'
 difficulty = 'hard'
 
-# sudoku = np.load("data/" + difficulty + "_puzzle.npy")
-# print(difficulty + "_puzzle.npy has been loaded into the variable sudoku")
-
-# solutions = np.load("data/" + difficulty + "_solution.npy")
-# print()
-
 correct = []
 times = []
 
-# for i in range(0,15):
-    
 start_time = time.process_time()
 # print()
 # print(i)
